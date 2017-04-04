@@ -1,0 +1,15 @@
+{% if anonymous %}
+  {% include 'login.html' %}
+{% endif %}
+
+<h2>  {{ user  }} </h2>
+{{ request.session.marker }}
+<table>
+  {% for proc in procs %}
+  <tr>
+    <td> {{proc.pid}} </td>
+    <td> {{proc.pname}}  </td>
+    <td style="text-align:right ; font-size:12px">  {{proc.last_name}}  </td>
+  </tr>
+  {% endfor %}
+</table>
